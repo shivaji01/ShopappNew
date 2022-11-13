@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { EmpServiceService } from './emp-service.service';
+import { Employee } from './employee/employee.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AmolSirSessions';
+  empsevice:any;
+  employeeDetails:Employee[]=[];
+  constructor(){
+    this.empsevice=new EmpServiceService();
+  }
+
+  ngOninit()
+  {
+    this.employeeDetails=this.empsevice.getEmployes();
+
+  }
 }

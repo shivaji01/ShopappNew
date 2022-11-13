@@ -1,0 +1,42 @@
+.bg-light{
+    color: dodgerblue;
+    
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.d-flex{
+    height: 31px;
+    width: 501px;
+}
+
+.searchinput{
+
+position: relative;
+    left: 167%;
+    
+}
+.nav2{
+    left: 167px;
+    position: relative;
+
+}
+.logoname{
+    margin-left: 72px;
+    font-family: fantasy;
+    background-color: rgb(251, 253, 110);
+    transition: transform .2s;
+    color: rgb(248, 42, 248) !important;
+    border-radius: 20px;
+    
+    
+}
+.logoname:hover{
+ background-color: rgb(61, 129, 255);
+ transform: scale(1.5);
+ border-radius: 15px;
+    
+}

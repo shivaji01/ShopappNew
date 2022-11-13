@@ -1,0 +1,16 @@
+<p>login works!</p>
+<div>
+    <form [formGroup]="loginform">
+      <div>
+        <label>login id</label>
+        <input type="text" id="loginId" name="loginId" formControlName="loginId" >
+    </div>
+        <div>
+            <label>Password</label>
+            <input type="password" id="password" name="password" formControlName="password" >
+        </div>
+        <div>
+            <button (click)="onSubmit(loginform)">Submit</button>
+        </div>
+    </form>
+</div>
