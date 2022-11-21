@@ -1,36 +1,52 @@
 <section class="shadow p-4 mb-2 bg-body rounded ">
     <div class="container d-flex justify-content-center align-item-center">
         <div class="mx-2 menubar">
-            <img src="assets/Images/top.png" alt="top offers" width="65px" height="55px">
-            <a href="#" class="d-block text-decoration-none"> Top offers</a>
+            <a (click)="filterprodSingle('all')">
+                <img src="assets/Images/top.png" alt="top offers" width="65px" height="55px">
+                <a href="#" class="d-block text-decoration-none"> Top offers</a>
+            </a>
         </div>
         <div class="mx-2 menubar">
-            <img src="assets/Images/top2.png" alt="top offers" width="65px" height="55px">
-            <a href="#" class="d-block text-decoration-none"> Grocerys</a>
+            <a  (click)="filterprodSingle('jewelery')">
+                <img src="assets/Images/top2.png" alt="top offers" width="65px" height="55px">
+                <a href="#" class="d-block text-decoration-none"> Grocerys</a>
+            </a>
         </div>
         <div class="mx-2 menubar">
-            <img src="assets/Images/top3.png" alt="top offers" width="65px" height="55px">
-            <a href="#" class="d-block text-decoration-none"> Electronics</a>
+            <a  (click)="filterprodSingle('electronics')">
+                <img src="assets/Images/top3.png" alt="top offers" width="65px" height="55px">
+                <a href="#" class="d-block text-decoration-none"> Electronics</a>
+            </a>
         </div>
         <div class="mx-2 menubar">
-            <img src="assets/Images/top4.png" alt="top offers" width="65px" height="55px">
-            <a href="#" class="d-block text-decoration-none"> Cloths</a>
+            <a  (click)="filterprodSingle('clothings')">
+                <img src="assets/Images/top4.png" alt="top offers" width="65px" height="55px">
+                <a href="#" class="d-block text-decoration-none"> Cloths</a>
+            </a>
         </div>
         <div class="mx-2 menubar">
-            <img src="assets/Images/top.png" alt="top offers" width="65px" height="55px">
-            <a href="#" class="d-block text-decoration-none"> Top offers</a>
+            <a  (click)="filterprodSingle('all')">
+                <img src="assets/Images/top.png" alt="top offers" width="65px" height="55px">
+                <a href="#" class="d-block text-decoration-none"> Top offers</a>
+            </a>
         </div>
         <div class="mx-2 menubar">
-            <img src="assets/Images/top2.png" alt="top offers" width="65px" height="55px">
-            <a href="#" class="d-block text-decoration-none"> Grocerys</a>
+            <a  (click)="filterprodSingle('jewelery')">
+                <img src="assets/Images/top2.png" alt="top offers" width="65px" height="55px">
+                <a href="#" class="d-block text-decoration-none"> Grocerys</a>
+            </a>
         </div>
         <div class="mx-2 menubar">
-            <img src="assets/Images/top3.png" alt="top offers" width="65px" height="55px">
-            <a href="#" class="d-block text-decoration-none"> Electronics</a>
+            <a  (click)="filterprodSingle('electronics')">
+                <img src="assets/Images/top3.png" alt="top offers" width="65px" height="55px">
+                <a href="#" class="d-block text-decoration-none"> Electronics</a>
+            </a>
         </div>
         <div class="mx-2 menubar">
-            <img src="assets/Images/top4.png" alt="top offers" width="65px" height="55px">
-            <a href="#" class="d-block text-decoration-none"> Cloths</a>
+            <a  (click)="filterprodSingle('clothings')">
+                <img src="assets/Images/top4.png" alt="top offers" width="65px" height="55px">
+                <a href="#" class="d-block text-decoration-none"> Cloths</a>
+            </a>
         </div>
     </div>
 </section>
@@ -50,7 +66,7 @@
                 <img src="assets/Images/car3.png" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item" data-bs-interval="2000">
-                <img src="assets/Images/car2.png" class="d-block w-100" alt="...">
+                <img src="assets/Images/top5.png" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item" data-bs-interval="2000">
                 <img src="assets/Images/car.png" class="d-block w-100" alt="...">
@@ -66,5 +82,23 @@
             </button>
           </div>
        </div> 
+</section>
 
+
+<section class="mt-2">
+  <div class=" container-fluid">
+    <div class=" row" >
+                <div class="col-sm-6 col-md-4 col-lg-3 d-flex m-2" Style="width: 20%;" *ngFor="let item of Filterprodarray">
+            <div class="card cardbd" style="width: 15rem;">
+                <img src={{item.image}} class="card-img-top cardbd" alt={{item.title}} style="height: 250px; ">
+                <div class="card-body ">
+                  <h5 class="card-title cdtitle">{{item.title}}</h5>
+                  <p class="card-text cardtxt">{{item.description}}</p>
+                  <h5 class="card-title">Price: ${{item.price}}</h5>
+                  <a href="#" class="btn btn-primary cartbtn">Add To Cart</a>
+                </div>
+              </div> 
+        </div>      
+    </div>
+  </div>
 </section>
