@@ -1,0 +1,73 @@
+<form [formGroup]="signupForm" (ngSubmit)="formsubmit()">
+    <div class="mb-3">
+        <label for="firstname" class="form-label">Firstname</label>
+        <input type="text" class="form-control" id="firstname" formControlName="firstname">
+        <div class="invalid-feedback d-block" *ngIf="signupForm.controls['firstname'].errors?.['required'] && (signupForm.controls['firstname'].touched || signupForm.controls['firstname'].dirty)">
+            Please enter your first name
+        </div>
+        <div class="invalid-feedback d-block" *ngIf="signupForm.controls['firstname'].errors?.['pattern'] && (signupForm.controls['firstname'].touched || signupForm.controls['firstname'].dirty)">
+            Please enter max 10 values 
+        </div>
+    </div>
+    
+    <div class="mb-3">
+        <label for="lastname" class="form-label">Lastname</label>
+        <input type="text" class="form-control" id="lastname" formControlName="lastname">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">password</label>
+        <input type="password" class="form-control" id="password " formControlName="password">
+        <div *ngIf="signupForm.errors?.['paswdNotMatch']" class="invalid-feedback d-block">
+            Please enter your valid password
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm-password</label>
+        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+        <div *ngIf="signupForm.errors?.['paswdNotMatch']" class="invalid-feedback d-block">
+            Please enter your valid password
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="mobile" class="form-label">mobile</label>
+        <input type="number" class="form-control" id="mobile" formControlName="mobile">
+    </div>
+    <div class="mb-3" *ngIf="ActionName!='SignUp'">
+        <label for="DOB" class="form-label">DOB</label>
+        <input type="text" class="form-control" id="DOB" formControlName="DOB">
+    </div>
+    <div *ngIf="ActionName!='SignUp'">
+    <h3>Address Section</h3>
+    <div formGroupName="address">
+        <div class="mb-3">
+            <label for="line1" class="form-label">line1</label>
+            <input type="text" class="form-control" id="line1" formControlName="line1">
+        </div>
+        <div class="mb-3">
+            <label for="line2" class="form-label">line2</label>
+            <input type="text" class="form-control" id="line2" formControlName="line2">
+        </div>
+        <div class="mb-3">
+            <label for="city" class="form-label">city</label>
+            <input type="text" class="form-control" id="city" formControlName="city">
+        </div>
+        <div class="mb-3">
+            <label for="State" class="form-label">State</label>
+            <input type="text" class="form-control" id="State" formControlName="State">
+        </div>
+        <div class="mb-3">
+            <label for="pincode" class="form-label">pincode</label>
+            <input type="number" class="form-control" id="pincode" formControlName="pincode">
+        </div>
+    </div>
+    </div>  
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="informaccept" formControlName="informaccept">
+        <label class="form-check-label" for="informaccept">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

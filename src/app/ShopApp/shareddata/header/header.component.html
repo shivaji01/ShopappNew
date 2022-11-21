@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse nav2" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
           <li class="nav-item">
-            <a class=" text-white btn btn-success btn btn-outline-primary me-2" aria-current="page" href="#">Login</a>
+            <a class=" text-white btn btn-success btn btn-outline-primary me-2" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
           </li>
         
           <li class="nav-item dropdown">
@@ -35,3 +35,28 @@
   </nav>
 
 
+
+  <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{LoginactionType}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-signin *ngIf="LoginactionType=='signIn'"></app-signin>
+       <app-signup *ngIf="LoginactionType=='signUp'" [ActionName]="'SignUp'" (SignUpCompleted)="SignupHandler($event)"></app-signup>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" *ngIf="LoginactionType=='signIn'" (click)="handlesignUp()">New User</button>
+      </div>
+    </div>
+  </div>
+</div>

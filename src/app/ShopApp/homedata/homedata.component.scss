@@ -3,3 +3,29 @@
     transform: scale(1.5);
     border-radius: 15px;
 }
+.cardtxt{
+    overflow: hidden;
+    white-space: nowrap;
+}
+.card-body{
+    display: grid;
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: center;
+}
+.cardbd{
+      background-color: chartreuse;  
+      border-radius: 15px;
+      border-collapse: collapse;
+      border-style: groove;
+      
+}
+
+.cartbtn{
+    background-color: rgb(183, 0, 255);
+    display: block;
+}
+.cdtitle{
+    overflow: hidden;
+    white-space: nowrap;
+}
